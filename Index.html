@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access data to Backoffice</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        /* Estilos base para todos los tamaños de pantalla */
+        .main-acceso {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            background-image: url(./Bg.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        h1{
+        font-size: 2rem;
+        font-weight: 300;
+        width: auto;
+        text-align: center;
+        text-transform: uppercase;
+        }
+
+
+input{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    width: 106px;
+}
+
+      
+
+        h1 {
+            
+            text-align: center;
+            line-height: 48px;
+            margin-bottom: 2rem;
+        }
+
+        h1 strong {
+            font-size: 2em;
+            color: #ff7700;
+           
+        }
+
+        .Usuario{
+           margin-bottom: 2rem;
+           
+            
+        
+        }
+
+        h3 {
+            font-size: 1.5em;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .Usuario h2{
+            font-size: 60px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+button{
+    margin-top: 2rem;
+    background-color: #ff7700;
+    padding: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 15PX;
+}
+
+button:hover{
+    background-color: #fff;
+    color: #ff7700;
+}
+        .recuadro {
+            margin: 0 auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 1em;
+            background-image: url(./Bg2.png);
+            background-position: center;
+            background-size: cover;
+           /*  background: linear-gradient(108deg, #17A985 -16.56%, #0A87A1 29.21%, #03448C 99.07%); */
+            display: flex;
+            flex-direction: column;
+            padding: 3em 1.5em;
+            background-blend-mode: soft-light;
+            justify-content: space-around;
+        }
+
+        .datos-recuadro {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            justify-content: space-evenly;
+        }
+
+        .user_data {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .user {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+        }
+
+        .user_title {
+            font-size: 1em;
+            text-align: left;
+        }
+
+        .clave {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+        }
+
+        .user_clave {
+            font-size: 1em;
+            text-align: left;
+        }
+
+        .logo{
+            width: 90%;
+            display: inline-flex;
+            align-items: baseline;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 35px;
+
+        }
+
+        .logo span{
+            background-image: url(./Logo.png);
+            display: block;
+            width: 75px;
+            height: 75px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* Media Query para tablets (768px - 1023px) */
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            .recuadro {
+                width: 50%;
+                padding: 4em 1.5em;
+            }
+
+            .datos-recuadro {
+                justify-content: space-evenly;
+            }
+
+            .fondo-recuadro {
+                position: absolute;
+                top: 108%;
+                left: 54%;
+                transform: translate(-50%, -50%);
+                width: 51%;
+                max-width: 800px;
+                height: 49%;
+                border-radius: 1em;
+                background: linear-gradient(132deg, rgba(255, 255, 255, 0.40) 3.48%, rgba(255, 255, 255, 0.10) 71.65%);
+                box-shadow: 0px 0.9814px 5.88838px -0.24535px rgba(0, 0, 0, 0.25);
+                backdrop-filter: blur(4.906979560852051px);
+            }
+        }
+
+        /* Media Query para escritorios (1024px en adelante) */
+        @media screen and (min-width: 1024px) {
+            .recuadro {
+                width: 35%;
+                padding: 4em 1.5em;
+            }
+
+            .datos-recuadro {
+                justify-content: space-evenly;
+            }
+
+           
+        }
+    </style>
+   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <main class="main-acceso">
+        <h1>Welcome to  <br> <strong>BACKOFFICE</strong></h1>
+        <div class="Usuario">
+            <h2 id="nombreUsuario" contenteditable="true">TYPE Full Name </h2>
+        </div>
+        <section class="recuadro">
+            <section class="datos-recuadro">
+                <h3>Your access <br> data </h3>
+                <div class="user_data">
+                    <div class="user">
+                        <div class="user_title">
+                            <form id="userForm">
+                                <label for="usuario"><STrong>User:</STrong></label>
+                                <input type="text" id="usuario" name="usuario" value="User">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="clave">
+                        <div class="user_clave">
+                            <form id="claveForm">
+                                <label for="clave"><strong>Password:</strong></label>
+                                <input type="text" id="clave" name="clave" value="Password">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+       
+        <button id="downloadButton">Download</button>
+        <section class="logo">
+            <p>WWW.INSPIREWORLDWIDE.COM</p>
+            <span></span>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function() {
+    const main = document.querySelector('.main-acceso');
+
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.style.visibility = 'hidden';
+    });
+
+    const nombreUsuario = document.getElementById('nombreUsuario').innerText;
+
+    html2canvas(main, { scale: 3 }).then(canvas => {
+        const image = canvas.toDataURL('image/jpeg', 1.0);
+
+        buttons.forEach(button => {
+            button.style.visibility = 'visible';
+        });
+
+        const a = document.createElement('a');
+        a.href = image;
+
+        // Generar el nombre del archivo con el nombre de usuario
+        a.download = `AccessBACK_${nombreUsuario}.jpg`;
+
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+});
+
+
+    </script>
+</body>
+</html>
+
